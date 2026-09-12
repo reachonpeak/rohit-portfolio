@@ -617,7 +617,14 @@ export default function Studio() {
       </main>
 
       <footer className="site-footer wrap">
-        <Logo />
+        <div className="footer-left">
+          <Logo />
+          <div className="footer-contact-info">
+            <a href={`mailto:${contact.email}`} className="footer-contact-link">{contact.email}</a>
+            <span className="footer-dot">·</span>
+            <a href={`https://wa.me/${contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" className="footer-contact-link">{contact.phone}</a>
+          </div>
+        </div>
         <nav aria-label="Footer navigation">
           {['Home', 'Work', 'Services', 'About', 'Contact'].map(item => (
             <a href={`#${item.toLowerCase()}`} key={item}>{item}</a>

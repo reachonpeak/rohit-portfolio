@@ -34,6 +34,6 @@ export const projects: Project[] = [
   { id: 'sharpedge-05', brand: 'Sharp Edge Homes', title: 'Luxury living & interior craftsmanship.', category: 'Spaces & places', format: 'landscape', duration: '00:36', description: 'A cinematic 16:9 widescreen showcase of luxury bespoke interiors, custom cabinetry, ambient lighting, and refined fixtures.', details: ['Landscape 16:9', 'Interior Craftsmanship', 'Cinematic Home Tour'], color: '#c0aa92' },
 ];
 
-export const contact = { email: 'jasvir.visual06@gmail.com', phone: '+91 95177 17717', whatsapp: '', instagram: '' };
+export const contact = { email: 'rohitvermapb03@gmail.com', phone: '+91 62392 64499', whatsapp: '6239264499', instagram: '' };
 export const brandCount = new Set(projects.map(project => project.brand)).size;
 export const projectCount = String(projects.length).padStart(2, '0');

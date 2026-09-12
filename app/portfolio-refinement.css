@@ -293,3 +293,39 @@ html { scroll-padding-top: 112px; }
   flex-shrink: 0;
 }
 
+/* Footer contact info */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #9ab493;
+}
+
+.footer-contact-link {
+  color: #c5f56a;
+  transition: opacity 0.2s;
+}
+
+.footer-contact-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.footer-dot {
+  color: #4a5c48;
+}
+
+@media (max-width: 680px) {
+  .footer-contact-info {
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+}
+
