@@ -10,7 +10,7 @@ export function HeroTitle() {
 }
 
 export function OrbitalLens() {
-  return <div className="orbital-lens" aria-hidden="true"><div className="lens-aura" /><div className="lens-space"><div className="lens-assembly"><div className="lens-hoop hoop-one" /><div className="lens-hoop hoop-two" /><div className="lens-hoop hoop-three" /><div className="lens-hoop hoop-four" /><div className="lens-core"><span>JS</span></div><span className="orbit-pearl pearl-one" /><span className="orbit-pearl pearl-two" /></div></div><span className="lens-caption">STORIES IN ORBIT / ALWAYS IN MOTION</span></div>;
+  return <div className="orbital-lens" aria-hidden="true"><div className="lens-aura" /><div className="lens-space"><div className="lens-assembly"><div className="lens-hoop hoop-one" /><div className="lens-hoop hoop-two" /><div className="lens-hoop hoop-three" /><div className="lens-hoop hoop-four" /><div className="lens-core"><span>RV</span></div><span className="orbit-pearl pearl-one" /><span className="orbit-pearl pearl-two" /></div></div><span className="lens-caption">STORIES IN ORBIT / ALWAYS IN MOTION</span></div>;
 }
 
 export function MotionMarquee() {
