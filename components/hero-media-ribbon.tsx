@@ -7,7 +7,7 @@ const media = [
   { id: 'wellness-city', label: 'The Wellness City', kind: 'FILM / 02', video: true, shape: 'wide' },
   { id: 'portrait', label: 'The person behind the cut', kind: 'ROHIT / PORTRAIT', image: '/work/rohit.png', shape: 'portrait' },
   { id: 'kaurz-kitchen', label: 'Kaurz Kitchen', kind: 'FILM / 03', video: true, shape: 'portrait' },
-  { id: 'identity', label: 'A signature in every frame', kind: 'JASVIR / IDENTITY', image: '/brand/linkedin-banner.webp', shape: 'banner' },
+  { id: 'identity', label: 'A signature in every frame', kind: 'ROHIT / IDENTITY', image: '/brand/linkedin-banner.webp', shape: 'banner' },
 ];
 
 function MediaPanel({ item, active, duplicate, open }: { item: typeof media[number]; active: boolean; duplicate: boolean; open: (id: string) => void }) {
@@ -30,7 +30,7 @@ function MediaPanel({ item, active, duplicate, open }: { item: typeof media[numb
     sync(); document.addEventListener('visibilitychange', sync); reduced.addEventListener('change', sync);
     return () => { clip.pause(); document.removeEventListener('visibilitychange', sync); reduced.removeEventListener('change', sync); };
   }, [active, visible]);
-  return <button ref={panel} className={`hero-media-panel media-${item.shape}`} tabIndex={duplicate ? -1 : 0} aria-label={item.video ? `Play ${item.label} from hero strip` : `About Jasvir: ${item.label}`} onClick={() => item.video ? open(item.id) : document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}>
+  return <button ref={panel} className={`hero-media-panel media-${item.shape}`} tabIndex={duplicate ? -1 : 0} aria-label={item.video ? `Play ${item.label} from hero strip` : `About Rohit: ${item.label}`} onClick={() => item.video ? open(item.id) : document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}>
     {item.video ? <video ref={video} src={visible ? `/work/${item.id}-preview.mp4` : undefined} poster={`/work/${item.id}.jpg`} muted loop playsInline preload="none" aria-hidden="true" /> : <img src={item.image} alt="" loading="lazy" />}
     <span className="media-panel-kind">{item.kind}</span>
     <span className="media-panel-caption">{item.label}<span aria-hidden="true">{item.video ? '↗' : '✳'}</span></span>

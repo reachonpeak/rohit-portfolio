@@ -323,7 +323,7 @@ export default function Studio() {
             <Eyebrow>VIDEO EDITING · MOTION · STORYTELLING</Eyebrow>
             <h1>EVERY FRAME.<br /><span>A FEELING.</span></h1>
             <p className="hero-description">
-              I’m Jasvir. I turn footage into stories<br />through editing, colour, sound, and motion.
+              I’m Rohit. I turn footage into stories<br />through editing, colour, sound, and motion.
             </p>
             <div className="button-row">
               <button className="button primary" onClick={() => setFilm(catalog[0])}>
@@ -480,7 +480,7 @@ export default function Studio() {
             </div>
             <div className="about-copy">
               <Eyebrow>ABOUT ME</Eyebrow>
-              <h2>HI, I’M <span>JASVIR.</span></h2>
+              <h2>HI, I’M <span>ROHIT.</span></h2>
               <h3>A Video Editor Who Turns Ideas Into Impact.</h3>
               <p>I’m a video editor based in Bathinda, Punjab, working across automotive films, property showcases, social campaigns, and motion graphics. From the first cut to the final sound, I shape every detail around the story you want to tell.</p>
               <Stats icons />
@@ -494,7 +494,7 @@ export default function Studio() {
               </div>
             </div>
             <div className="about-signature handwriting">
-              Edit.<br />Create.<br />Inspire.<span>Jasvir</span>
+              Edit.<br />Create.<br />Inspire.<span>Rohit</span>
             </div>
           </div>
         </section>
@@ -606,8 +606,8 @@ export default function Studio() {
               <span><strong>Bathinda, India</strong><small>Available Worldwide</small></span>
             </div>
             <div className="social-links">
-              <a href={`mailto:${contact.email}`} aria-label="Email Jasvir"><Icon name="mail" /></a>
-              <a href={`https://wa.me/${contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" aria-label="WhatsApp Jasvir"><Icon name="phone" /></a>
+              <a href={`mailto:${contact.email}`} aria-label="Email Rohit"><Icon name="mail" /></a>
+              <a href={`https://wa.me/${contact.phone.replace(/\D/g, '')}`} target="_blank" rel="noreferrer" aria-label="WhatsApp Rohit"><Icon name="phone" /></a>
               <a href="/brand/jasvir-singh.vcf" download aria-label="Download contact card"><Icon name="download" /></a>
               <button onClick={() => setFilm(catalog[0])} aria-label="Watch featured video"><Icon name="youtube" /></button>
             </div>
@@ -624,7 +624,7 @@ export default function Studio() {
           ))}
           <a href="/admin">Admin</a>
         </nav>
-        <p>© {new Date().getFullYear()} Jasvir. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Rohit. All rights reserved.</p>
       </footer>
 
       {film && (
@@ -696,7 +696,7 @@ export default function Studio() {
               {sendState === 'sending' ? 'Sending...' : sendState === 'sent' ? 'Enquiry Sent' : 'Send Project Enquiry'} <Icon name="arrow" />
             </button>
             <p className="form-status" role="status">
-              {sendState === 'sent' ? 'Thank you! Your enquiry has been sent to Jasvir.' : sendState === 'error' ? sendError : sendState === 'sending' ? 'Sending your enquiry...' : 'Your project details will be emailed directly to Jasvir.'}
+              {sendState === 'sent' ? 'Thank you! Your enquiry has been sent to Rohit.' : sendState === 'error' ? sendError : sendState === 'sending' ? 'Sending your enquiry...' : 'Your project details will be emailed directly to Rohit.'}
             </p>
           </form>
         </Modal>
