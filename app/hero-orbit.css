@@ -1,0 +1,153 @@
+/* The original orbital sculpture, composed specifically for the active hero. */
+.hero.hero-orbit-stage {
+  min-height: 574px;
+  padding-top: 36px;
+  padding-bottom: 44px;
+  grid-template-columns: 1fr 1.08fr;
+  isolation: isolate;
+}
+.hero-orbit-backdrop {
+  position: absolute;
+  inset: 0 -35px;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 79% 53%, #a4d5640c, transparent 54%);
+  mask-image: linear-gradient(transparent, #000 12%, #000 84%, transparent);
+}
+.hero-orbit-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#c5f56a06 1px, transparent 1px), linear-gradient(90deg,#c5f56a06 1px,transparent 1px);
+  background-size: 58px 58px;
+  mask-image: linear-gradient(90deg,transparent 35%,#000);
+}
+.hero-orbit-backdrop>span {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: 12px;
+  top: 5px;
+  border: 1px solid #c5f56a13;
+  border-radius: 50%;
+  transform: rotate(-24deg) scaleY(.72);
+}
+.hero-orbit-backdrop>span+span { inset: 42px 50px auto auto; width: 440px; height: 440px; border-style: dashed; opacity: .6; }
+.hero-orbit-stage .hero-copy { padding-bottom: 9px; }
+.hero-orbit-stage .hero-copy>.eyebrow { letter-spacing: 2.1px; color: #c1dba2; font-size: 10px; }
+.hero-orbit-stage h1 { font-size: clamp(68px,6.3vw,91px); line-height: .98; letter-spacing: -1.5px; margin-bottom: 25px; }
+.hero-orbit-stage h1>span { color: #c5f56a; background: linear-gradient(115deg,#efffcb 0%,#c5f56a 44%,#a3d04b 100%); background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-orbit-stage .hero-description { font-size: 15px; line-height: 1.65; max-width: 375px; }
+.hero-orbit-stage .button.primary { box-shadow: 0 6px 24px #bcf46519,inset 0 1px 0 #efffd866; }
+.hero-orbit-stage .stats { margin-top: 34px; }
+.hero-location { display: flex; align-items: center; gap: 9px; margin-top: 28px; font-size: 8px; letter-spacing: 1.6px; color: #98ab97; }
+.hero-location>span { width: 5px; height: 5px; border-radius: 50%; background: #c5f56a; box-shadow: 0 0 9px #c5f56a66; }
+.hero-location>i { width: 18px; height: 1px; background: #738a624d; margin-inline: 3px; }
+.hero-orbit-stage .hero-art { height: 472px; }
+.hero-orbit-stage .portrait-card { top: 24px; left: 8px; width: 232px; height: 348px; box-shadow: 0 20px 50px #0006,0 0 0 6px #c5f56a04; }
+.hero-orbit-stage .portrait-card>img { filter: brightness(.9); }
+.hero-orbit-stage .landscape-card { top: 40px; right: -5px; width: 247px; height: 192px; }
+.hero-orbit-stage .art-note { right: -7px; bottom: 48px; font-size: 18px; opacity: .8; }
+.hero-orbit-stage .doodle-arrow { bottom: 30px; left: 64px; width: 56px; opacity: .75; }
+.hero-orbit {
+  position: absolute;
+  left: 39%;
+  bottom: 0;
+  width: 278px;
+  height: 264px;
+  z-index: 3;
+  pointer-events: none;
+}
+.hero-orbit .orbital-lens { position: absolute; inset: 0 0 20px; transform-style: preserve-3d; }
+.hero-orbit .lens-aura { position: absolute; inset: -24px; border-radius: 50%; background: radial-gradient(circle,#b8f56620,transparent 63%); }
+.hero-orbit .lens-space { position: absolute; inset: 0; display: grid; place-items: center; perspective: 850px; }
+.hero-orbit .lens-assembly { position: relative; width: 218px; height: 218px; transform-style: preserve-3d; animation: hero-orb-turn 24s linear infinite; }
+.hero-orbit .lens-hoop {
+  position: absolute;
+  inset: 0;
+  border: 6px solid #b7c8a2;
+  border-top-color: #f5ffe8;
+  border-left-color: #9ab16f;
+  border-bottom-color: #3d5230;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 3px #efffca7a,0 0 0 1px #efffca26,0 0 15px #b6ed6220;
+  backface-visibility: visible;
+}
+.hero-orbit .hoop-one { transform: rotateY(0deg); }
+.hero-orbit .hoop-two { transform: rotateY(60deg); }
+.hero-orbit .hoop-three { transform: rotateY(120deg); }
+.hero-orbit .hoop-four { transform: rotateX(90deg); border-width: 9px; border-right-color: #d4f099; }
+.hero-orbit .lens-core {
+  position: absolute;
+  inset: 71px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #25361a;
+  font-family: Georgia,serif;
+  font-size: 24px;
+  letter-spacing: -2px;
+  background: radial-gradient(circle at 29% 22%,#fcfff1 0%,#daefb4 19%,#a5c171 44%,#455f2d 72%,#122207 100%);
+  box-shadow: inset -5px -7px 15px #0714008c,0 0 28px #b0cf6233;
+  animation: hero-orb-core 24s linear infinite;
+}
+.hero-orbit .lens-core>span { opacity: .7; text-shadow: 0 1px 0 #efffd87a; }
+.hero-orbit .orbit-pearl { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 30% 20%,#fff,#c0d2a4 38%,#3e592b 75%); box-shadow: 0 0 15px #c5f56a35; }
+.hero-orbit .pearl-one { top: 30px; left: 20px; transform: translateZ(43px); }
+.hero-orbit .pearl-two { bottom: 24px; right: 42px; width: 12px; height: 12px; transform: translateZ(-45px); }
+.hero-orbit .lens-caption { display: none; }
+.hero-orbit-shadow { position: absolute; width: 170px; height: 23px; left: 54px; bottom: 28px; border-radius: 50%; background: #0009; filter: blur(10px); }
+.hero-orbit-label { position: absolute; bottom: 0; inset-inline: 0; display: flex; justify-content: center; align-items: center; gap: 11px; font-size: 7px; letter-spacing: 2.5px; color: #a5b991; }
+.hero-orbit-label>i { width: 22px; height: 1px; background: #c5f56a6b; }
+@keyframes hero-orb-turn { from { transform: rotateX(-18deg) rotateY(0deg) rotateZ(-20deg); } to { transform: rotateX(-18deg) rotateY(360deg) rotateZ(-20deg); } }
+/* Counter-rotation keeps the lit sphere and engraved initials facing the viewer. */
+@keyframes hero-orb-core { from { transform: rotateZ(20deg) rotateY(0deg) rotateX(18deg); } to { transform: rotateZ(20deg) rotateY(-360deg) rotateX(18deg); } }
+@media (min-width:901px) and (max-width:1100px) {
+  .hero.hero-orbit-stage { padding-inline: 22px; grid-template-columns: 1fr 1fr; }
+  .hero-orbit-stage h1 { font-size: 72px; }
+  .hero-orbit-stage .hero-art { transform: scale(.85); transform-origin: center right; width: 470px; }
+}
+@media (min-width:681px) and (max-width:900px) {
+  .hero.hero-orbit-stage { min-height: 478px; padding: 30px 10px 38px; }
+  .hero-orbit-stage h1 { font-size: 59px; letter-spacing: -1px; }
+  .hero-orbit-stage .hero-art { top: 0; transform: scale(.69); width: 485px; }
+  .hero-orbit-stage .hero-copy>.eyebrow { font-size: 8px; letter-spacing: 1px; }
+  .hero-orbit-stage .hero-description { font-size: 12px; }
+  .hero-location { font-size: 6px; letter-spacing: 1px; gap: 6px; }
+}
+@media (max-width:680px) {
+  .hero.hero-orbit-stage { padding: 26px 5px 30px; min-height: 0; }
+  .hero-orbit-stage h1 { font-size: clamp(57px,13.8vw,82px); margin-bottom: 20px; }
+  .hero-orbit-stage .hero-copy>.eyebrow { font-size: 9px; letter-spacing: 1.5px; }
+  .hero-orbit-stage .hero-description { font-size: 14px; }
+  .hero-location { font-size: 7px; letter-spacing: 1px; gap: 7px; margin-top: 23px; }
+  .hero-orbit-stage .hero-art { height: 420px; margin-top: 24px; }
+  .hero-orbit-stage .portrait-card { left: 3%; top: 16px; width: 48%; height: 291px; }
+  .hero-orbit-stage .landscape-card { right: 0; top: 38px; width: 51%; height: 165px; }
+  .hero-orbit-stage .landscape-caption { font-size: 20px; }
+  .hero-orbit-stage .glowing-play { right: 17px; bottom: 46px; }
+  .hero-orbit { left: 35%; width: 220px; height: 217px; bottom: 0; }
+  .hero-orbit .lens-assembly { width: 178px; height: 178px; }
+  .hero-orbit .lens-hoop { border-width: 5px; }
+  .hero-orbit .hoop-four { border-width: 7px; }
+  .hero-orbit .lens-core { inset: 58px; font-size: 21px; }
+  .hero-orbit-shadow { width: 140px; left: 40px; bottom: 27px; }
+  .hero-orbit-stage .art-note { bottom: 28px; right: auto; left: 9px; font-size: 17px; }
+  .hero-orbit-stage .art-note>span { display: none; }
+  .hero-orbit-stage .doodle-arrow { left: 13%; bottom: 65px; width: 46px; height: 52px; transform: rotate(-45deg); }
+  .hero-orbit-backdrop { inset: 30% -10px 0; }
+  .hero-orbit-backdrop>span { right: -75px; top: 180px; }
+}
+@media (max-width:370px) {
+  .hero-orbit-stage .hero-copy>.eyebrow { font-size: 8px; letter-spacing: 1px; }
+  .hero-orbit-stage h1 { font-size: 54px; }
+  .hero-orbit-stage .hero-art { height: 385px; }
+  .hero-orbit-stage .portrait-card { height: 260px; }
+  .hero-orbit { left: 29%; }
+  .hero-orbit-stage .landscape-card { height: 150px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-orbit .lens-assembly { transform: rotateX(-18deg) rotateY(30deg) rotateZ(-20deg); }
+  .hero-orbit .lens-core { transform: rotateZ(20deg) rotateY(-30deg) rotateX(18deg); }
+}

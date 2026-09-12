@@ -1,0 +1,72 @@
+/* Motion for the active portfolio layout. Content stays visible without JS. */
+.reference-studio { isolation: isolate; }
+.motion-progress { position: fixed; inset: 0 0 auto; height: 2px; z-index: 100; pointer-events: none; }
+.motion-progress>div { height: 100%; background: linear-gradient(90deg,#537540,var(--lime),#e4ffc0); transform: scaleX(0); transform-origin: left; box-shadow: 0 0 12px #c5f56a70; }
+.motion-control { position: fixed; right: 20px; bottom: 18px; z-index: 40; display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 10px 15px; border: 1px solid #c5f56a40; border-radius: 30px; background: #0b1813ed; color: #d3e9ba; font-size: 11px; box-shadow: 0 4px 24px #0005; }
+.motion-control:hover { border-color: var(--lime); }
+.reference-studio [data-depth] { transform: perspective(1100px) rotateX(var(--depth-x,0deg)) rotateY(var(--depth-y,0deg)); transition: transform .45s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; }
+.reference-studio [data-tilting="true"] { transition-duration: .12s; will-change: transform; }
+.reference-studio .project-card { animation: none; }
+.reference-studio :is(.project-card,.service-card,.offering,.review,.craft-card) { position: relative; }
+.reference-studio :is(.project-card,.service-card,.offering,.review,.craft-card)::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse at var(--shine-x,50%) var(--shine-y,20%),#d6ffac19,transparent 65%); opacity: 0; transition: opacity .3s; pointer-events: none; }
+.reference-studio [data-depth]:hover::after { opacity: 1; }
+.reference-studio [data-depth]:hover { border-color: #c5f56a75; box-shadow: 0 18px 30px -18px #000c,0 0 18px #c5f56a0c; }
+.hero-art { transform-style: preserve-3d; }
+.portrait-card { animation: studio-portrait-float 9s ease-in-out infinite; }
+.landscape-card { animation: studio-film-float 11s ease-in-out infinite; }
+.editor-card { animation: studio-editor-float 8s ease-in-out infinite; }
+.art-glow { animation: studio-light 12s ease-in-out infinite alternate; }
+.hero-art .playhead { animation: studio-playhead 6s linear infinite; }
+.hero-art .timeline-track i { animation: studio-track 3s ease-in-out infinite alternate; }
+.hero-art .track-1 i { animation-delay: -1s; }
+.hero-art .track-2 i { animation-delay: -2s; }
+.hero h1 { perspective: 900px; }
+.hero h1>span { display: inline-block; text-shadow: 0 2px 0 #607b3533,0 12px 35px #b3df6517; }
+.motion-lens { position: absolute; right: -25px; top: -15px; width: 180px; height: 180px; perspective: 700px; pointer-events: none; opacity: .48; }
+.motion-lens-axis { position: absolute; inset: 0; transform-style: preserve-3d; animation: studio-lens-turn 26s linear infinite; }
+.motion-lens i { position: absolute; inset: 0; border: 2px solid #a7d862; border-top-color: #eeffd4; border-bottom-color: #385432; border-radius: 50%; box-shadow: inset 0 0 10px #b3e66b12,0 0 15px #b3e66b0c; }
+.motion-lens i:nth-child(2) { transform: rotateY(60deg); }
+.motion-lens i:nth-child(3) { transform: rotateY(120deg); }
+.motion-lens-axis>span { position: absolute; width: 15px; height: 15px; top: 18px; left: 24px; border-radius: 50%; background: radial-gradient(circle at 30% 25%,#f0ffd8,#93b84e 40%,#293c21 80%); transform: translateZ(25px); }
+.platform-logos>span { perspective: 600px; transition: transform .4s,color .4s; }
+.platform-logos>span:hover { transform: perspective(600px) rotateY(-12deg) translateY(-3px); color: var(--lime); }
+.offering>span,.service-icon,.step-icon { box-shadow: inset 0 1px 0 #e5ffc414,0 5px 0 -2px #243821; transition: transform .45s,box-shadow .45s; }
+.offering:hover>span,.service-card:hover .service-icon { transform: perspective(600px) rotateY(-22deg) rotateX(12deg) translateY(-4px); box-shadow: inset 0 1px 0 #e5ffc438,5px 7px 0 -2px #243821; }
+.about-portrait { border-bottom-color: var(--lime); }
+.about-portrait img { transition: transform .7s; }
+.about-portrait:hover img { transform: scale(1.035); }
+.about-signature { animation: studio-signature 9s ease-in-out infinite; }
+.process-steps li { perspective: 700px; }
+.process-steps li::before { background-size: 200% 100%; background-image: linear-gradient(90deg,#52684455,var(--lime),#52684455); animation: studio-connection 5s linear infinite; }
+.step-icon { animation: studio-step 5s ease-in-out infinite; }
+.process-steps li:nth-child(2) .step-icon { animation-delay: -.8s; }
+.process-steps li:nth-child(3) .step-icon { animation-delay: -1.6s; }
+.process-steps li:nth-child(4) .step-icon { animation-delay: -2.4s; }
+.cta-banner>.motion-lens { width: 330px; height: 330px; right: -145px; top: -110px; opacity: .25; z-index: -1; }
+.cta-banner .motion-lens i { border-width: 4px; border-color: #365222; border-top-color: #f1ffda; }
+.cta-banner .showreel-button>span { animation: studio-cta-play 5s ease-in-out infinite; }
+.contact-details>a { border-radius: 8px; }
+.contact-details>a:hover { box-shadow: none; }
+.contact-details>a>svg { transition: transform .4s; }
+.contact-details>a:hover>svg { transform: perspective(500px) rotateY(-25deg) translateZ(8px); }
+.site-footer::after { animation: studio-light 12s ease-in-out infinite alternate; }
+.reference-studio[data-motion="paused"] *,.reference-studio[data-motion="paused"] *::before,.reference-studio[data-motion="paused"] *::after,
+.reference-studio [data-in-view="false"]::before,.reference-studio [data-in-view="false"]::after,
+.reference-studio [data-in-view="false"] *,.reference-studio [data-in-view="false"] *::before,.reference-studio [data-in-view="false"] *::after { animation-play-state: paused !important; }
+.reference-studio[data-motion="paused"] [data-depth] { transform: none; }
+.reference-studio[data-motion="paused"] :is(.offering>span,.service-icon,.contact-details>a>svg,.platform-logos>span) { transform: none; }
+.reference-studio[data-motion="paused"] { scroll-behavior: auto; }
+@keyframes studio-portrait-float { 0%,100% { transform: translate3d(0,0,0) rotateX(2deg) rotateY(7deg) rotateZ(-11deg); } 50% { transform: translate3d(-3px,-12px,14px) rotateX(-2deg) rotateY(-3deg) rotateZ(-8deg); } }
+@keyframes studio-film-float { 0%,100% { transform: translate3d(0,0,24px) rotateY(-8deg) rotateZ(10deg); } 50% { transform: translate3d(2px,10px,35px) rotateY(3deg) rotateZ(7deg); } }
+@keyframes studio-editor-float { 0%,100% { transform: translate3d(0,0,45px) rotateX(4deg) rotateZ(8deg); } 50% { transform: translate3d(-5px,-9px,55px) rotateX(-3deg) rotateZ(5deg); } }
+@keyframes studio-lens-turn { from { transform: rotateX(-22deg) rotateY(0deg) rotateZ(-20deg); } to { transform: rotateX(-22deg) rotateY(360deg) rotateZ(-20deg); } }
+@keyframes studio-light { from { transform: translate3d(-12px,-8px,0) scale(.95); opacity: .6; } to { transform: translate3d(15px,12px,0) scale(1.08); opacity: 1; } }
+@keyframes studio-playhead { from { transform: translateX(-60px); } to { transform: translateX(60px); } }
+@keyframes studio-track { from { opacity: .65; } to { opacity: 1; } }
+@keyframes studio-signature { 0%,100% { transform: perspective(800px) rotateY(-10deg) rotateZ(-13deg); } 50% { transform: perspective(800px) translateY(-6px) rotateY(7deg) rotateZ(-10deg); } }
+@keyframes studio-step { 0%,100% { transform: rotateY(-12deg) translateY(0); } 50% { transform: rotateY(12deg) translateY(-4px); } }
+@keyframes studio-connection { to { background-position: -200% 0; } }
+@keyframes studio-cta-play { 0%,100% { transform: perspective(500px) rotateY(-10deg); } 50% { transform: perspective(500px) rotateY(10deg) translateY(-4px); } }
+@media (max-width:680px) { .motion-control { right: 12px; bottom: 12px; min-height: 40px; padding: 10px 12px; font-size: 10px; } .hero-art>.motion-lens { right: 0; top: -5px; width: 140px; height: 140px; } .cta-banner>.motion-lens { width: 240px; height: 240px; } .site-footer { padding-bottom: 78px; } }
+@media (hover:none),(pointer:coarse) { .reference-studio [data-depth] { transform: none; } }
+@media (prefers-reduced-motion:reduce) { .reference-studio *,.reference-studio *::before,.reference-studio *::after { animation: none !important; transition: none !important; } .reference-studio [data-depth] { transform: none !important; } .motion-control { display: none; } .motion-lens-axis { transform: rotateX(-22deg) rotateY(30deg); } }

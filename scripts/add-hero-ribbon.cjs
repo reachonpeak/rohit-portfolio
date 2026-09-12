@@ -1,0 +1,12 @@
+const fs = require('fs');
+const path = require('path');
+const target = path.join(__dirname, '../components/studio.tsx');
+let source = fs.readFileSync(target, 'utf8');
+source = source.replace("import { Tilt }", "import { HeroMediaRibbon } from '@/components/hero-media-ribbon';\nimport { Tilt }");
+const button = '<button className="motion-toggle" onClick={() => setHeroMotion(!heroMotion)} aria-pressed={!heroMotion}>{heroMotion ? \'Ⅱ Pause motion\' : \'▷ Play motion\'}</button>';
+if (!source.includes(button)) throw new Error('Motion control anchor missing');
+source = source.replace(button, '');
+const anchor = '</div></Tilt></div><div className="hero-bottom">';
+if (!source.includes(anchor)) throw new Error('Hero anchor missing');
+source = source.replace(anchor, '</div></Tilt></div><HeroMediaRibbon active={heroMotion && heroVisible && !film && !brief} paused={!heroMotion} toggle={() => setHeroMotion(value => !value)} open={id => setFilm(projects.find(project => project.id === id) || projects[0])} /><div className="hero-bottom">');
+fs.writeFileSync(target, source);
